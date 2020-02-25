@@ -1,7 +1,11 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/ssr-apis/
- */
+const React = require("react")
 
-// You can delete this file if you're not using it
+exports.onRenderBody = ({ setHeadComponents }) => {
+  setHeadComponents([
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/css/swiper.min.css"
+    />,
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>,
+  ])
+}

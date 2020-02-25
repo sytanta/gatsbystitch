@@ -1,0 +1,20 @@
+[
+  {
+    "id": "John Z.",
+    "name": "John Z.",
+    "avatar": "./avatar_john_100x.jpg",
+    "position": "COO"
+  },
+  {
+    "id": "Michael L.",
+    "name": "Michael L.",
+    "avatar": "./avatar_mlaniak_100x.jpg",
+    "position": "Director of Customer"
+  },
+  {
+    "id": "Michael M.",
+    "name": "Michael M.",
+    "avatar": "avatar_michael_100x.jpg",
+    "position": "Co-Founder"
+  }
+]
