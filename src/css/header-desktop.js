@@ -13,6 +13,10 @@ const HeaderDesktop = styled.div`
   will-change: padding, background;
   z-index: 999;
 
+  &.fixed-height {
+    padding: 19px 0;
+  }
+
   nav,
   .nav-secondary {
     font-size: 10px;

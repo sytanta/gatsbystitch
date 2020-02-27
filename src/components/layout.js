@@ -34,20 +34,24 @@ const ContentContainer = styled.div`
   transform: translate3d(0, 0, 0);
   transition: all 0.3s;
 
+  &.drawer-left-open {
+    transform: translate3d(320px, 0px, 0px);
+  }
   &.drawer-right-open {
     transform: translate3d(-320px, 0px, 0px);
+  }
 
-    ::after {
-      background: rgba(0, 0, 0, 0.2);
-      content: "";
-      display: block;
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      z-index: 99999;
-      width: 100%;
-    }
+  &.drawer-left-open::after,
+  &.drawer-right-open::after {
+    background: rgba(0, 0, 0, 0.2);
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 99999;
+    width: 100%;
   }
 `
 
@@ -66,6 +70,19 @@ const ContentInner = styled.div`
     top: calc(-72px - 1px);
     transition: opacity 0.3s ease-in;
     will-change: opacity;
+
+    &.top-0 {
+      margin-bottom: 0;
+      top: 0;
+    }
+  }
+
+  main.template-product {
+    border: 0 none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    overflow: hidden;
   }
 
   @media (max-width: ${breakpoints.headerMobile}px) {
@@ -103,25 +120,40 @@ class Layout extends React.Component {
   }
 
   componentDidMount() {
-    checkStickyHeader(stickyHeaderID, asideID)
+    if (!this.props.headerClass || this.props.headerClass !== "opaque") {
+      checkStickyHeader(stickyHeaderID, asideID)
+    }
   }
 
   render() {
+    const contentContainerClass = this.state.ui.drawerRightOpen
+      ? "drawer-right-open"
+      : this.state.ui.drawerLeftOpen
+      ? "drawer-left-open"
+      : ""
+
+    const clickHandler = this.state.ui.drawerRightOpen
+      ? this.state.ui.toggleDrawerRight
+      : this.state.ui.drawerLeftOpen
+      ? this.state.ui.toggleDrawerLeft
+      : null
+
     return (
       <UIContext.Provider value={this.state.ui}>
         <Drawers />
         <ContentContainer
-          className={this.state.ui.drawerRightOpen ? "drawer-right-open" : ""}
-          onClick={
-            this.state.ui.drawerRightOpen
-              ? this.state.ui.toggleDrawerRight
-              : null
-          }
+          className={contentContainerClass}
+          onClick={clickHandler}
         >
           <ContentInner>
             <Aside id={asideID} />
-            <Header stickyHeaderID={stickyHeaderID} />
-            <main>{this.props.children}</main>
+            <Header
+              stickyHeaderID={stickyHeaderID}
+              className={this.props.headerClass || ""}
+            />
+            <main className={this.props.mainClass || ""}>
+              {this.props.children}
+            </main>
             <Footer />
           </ContentInner>
         </ContentContainer>
@@ -132,6 +164,8 @@ class Layout extends React.Component {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  headerClass: PropTypes.string,
+  mainClass: PropTypes.string,
 }
 
 export default Layout

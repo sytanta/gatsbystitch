@@ -69,7 +69,7 @@ const Container = styled.div`
 `
 
 const DrawerRight = ({ className }) => {
-  const { toggleDrawerRight } = useContext(UIContext)
+  const { drawerLeftOpen, toggleDrawerRight } = useContext(UIContext)
   const [tab, setTab] = useState("messages")
 
   const toggleTab = tab => {
@@ -77,7 +77,7 @@ const DrawerRight = ({ className }) => {
   }
 
   return (
-    <Container className={className}>
+    <Container className={`drawer ${drawerLeftOpen ? "hidden" : ""}`}>
       <ul className="drawer-control">
         <li className="snap-close" onClick={toggleDrawerRight}>
           <i>

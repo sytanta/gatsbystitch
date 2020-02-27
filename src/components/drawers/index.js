@@ -35,8 +35,8 @@ const Container = styled.div`
 
 const Drawers = () => (
   <Container>
-    <DrawerLeft className="drawer" />
-    <DrawerRight className="drawer" />
+    <DrawerLeft />
+    <DrawerRight />
   </Container>
 )
 

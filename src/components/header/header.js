@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
@@ -8,7 +8,7 @@ import HeaderMobile from "./header-mobile"
 
 import Container from "../../css/header"
 
-const Header = ({ stickyHeaderID }) => {
+const Header = ({ stickyHeaderID, className }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -20,7 +20,7 @@ const Header = ({ stickyHeaderID }) => {
   `)
 
   return (
-    <Container id={stickyHeaderID}>
+    <Container id={stickyHeaderID} className={className}>
       <HeaderDesktop />
       <HeaderMobile />
     </Container>
@@ -29,6 +29,7 @@ const Header = ({ stickyHeaderID }) => {
 
 Header.propTypes = {
   stickyHeaderID: PropTypes.string.isRequired,
+  className: PropTypes.string,
 }
 
 export default Header
