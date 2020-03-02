@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
@@ -13,31 +13,16 @@ import ModalRepair from "../components/product/modal-repair"
 import ModalShipping from "../components/product/modal-shipping"
 import ModalSize from "../components/product/modal-size"
 
-import UIContext from "../context/ui-context"
-
-const ProductPage = () => {
-  const { productHelpModal } = useContext(UIContext)
-
-  return (
-    <Layout headerClass="opaque" mainClass="top-0 template-product">
-      <SEO title="Product detail" />
-      <Images />
-      <Options />
-      <Description />
-      <Reviews />
-      <Editorial />
-      <Recommendation />
-      {productHelpModal === "repair" ? (
-        <ModalRepair />
-      ) : productHelpModal === "shipping" ? (
-        <ModalShipping />
-      ) : productHelpModal === "size" ? (
-        <ModalSize />
-      ) : (
-        ""
-      )}
-    </Layout>
-  )
-}
+const ProductPage = () => (
+  <Layout headerClass="opaque" mainClass="top-0 template-product">
+    <SEO title="Product detail" />
+    <Images />
+    <Options />
+    <Description />
+    <Reviews />
+    <Editorial />
+    <Recommendation />
+  </Layout>
+)
 
 export default ProductPage
