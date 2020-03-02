@@ -27,8 +27,12 @@ const spacing = {
 
 const breakpoints = {
   mobile: 400,
-  phablet: 550,
-  tablet: 750,
+  // phablet: 550,
+  // tablet: 750,
+  // headerMobile: 950,
+  // desktop: 1000,
+  phablet: 600,
+  tablet: 800,
   headerMobile: 950,
   desktop: 1000,
   xl: 1200,

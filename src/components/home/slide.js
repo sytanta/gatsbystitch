@@ -12,6 +12,10 @@ const Container = styled.div`
     width: 100%;
   }
 
+  .gatsby-image-wrapper {
+    line-height: 0;
+  }
+
   .textoverlay {
     display: table;
     height: 100%;
@@ -124,8 +128,7 @@ const Container = styled.div`
 
   @media (max-width: ${breakpoints.phablet}px) {
     .gatsby-image-wrapper {
-      & > div,
-      picture {
+      & > div {
         display: none;
       }
       picture + picture {

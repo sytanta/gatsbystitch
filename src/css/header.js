@@ -11,7 +11,7 @@ const Header = styled.header`
   position: sticky;
   top: 0;
   width: 100%;
-  will-change: top;
+  // will-change: top !important;
   z-index: 99999;
 
   transition: height ease-in-out 0.3s, color linear 0.1s;

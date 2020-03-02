@@ -71,6 +71,34 @@
   font-display: swap;
 }
 
+.anw {
+  font-family: "ANW", "AN", Avenir, "HelveticaNeue-Light",
+    "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande",
+    sans-serif;
+}
+.cd {
+  font-family: "CD", Georgia, Times, "Times New Roman", serif;
+}
+.normal-300 {
+  font-style: normal;
+  font-weight: 300;
+}
+.normal-400 {
+  font-style: normal;
+  font-weight: 400;
+}
+.normal-700 {
+  font-style: normal;
+  font-weight: 700;
+}
+.normal-800 {
+  font-style: normal;
+  font-weight: 800;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+
 *,
 ::after,
 ::before {
@@ -132,6 +160,11 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 .icon {
@@ -265,15 +298,32 @@ h1 {
 .figcaption .template-article .rte .included-collection .heading,
 .template-article .rte .included-collection figcaption .heading,
 figcaption .template-article .rte .included-collection .heading,
-h2,
 .figcaption .heading,
 figcaption .heading {
   font-family: "CD", Georgia, Times, "Times New Roman", serif;
-  font-weight: 300;
-  font-style: normal;
-  letter-spacing: 0;
   font-size: 2.95rem;
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: 0;
   line-height: 1.22034;
+}
+
+.h3,
+h3 {
+  font-family: "CD", Georgia, Times, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 1.55556;
+}
+
+b,
+strong {
+  font-family: "CD", Georgia, Times, "Times New Roman", serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0;
 }
 
 .container,
@@ -307,7 +357,7 @@ figcaption .heading {
   text-decoration: none !important;
   text-transform: uppercase !important;
   cursor: pointer;
-  font-family: "Avenir Next", Avenir, "HelveticaNeue-Light",
+  font-family: "ANW", "AN", Avenir, "HelveticaNeue-Light",
     "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande",
     sans-serif;
   font-weight: 700;

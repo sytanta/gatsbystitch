@@ -137,6 +137,8 @@ const Container = styled.footer`
   }
 
   @media (max-width: ${breakpoints.phablet}px) {
+    border-top: none;
+
     nav {
       display: flex;
     }

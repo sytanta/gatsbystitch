@@ -10,7 +10,7 @@ const HeaderDesktop = styled.div`
   text-align: center;
   text-transform: uppercase;
   transition: padding 0.3s ease-in-out;
-  will-change: padding, background;
+  // will-change: padding, background !important;
   z-index: 999;
 
   &.fixed-height {

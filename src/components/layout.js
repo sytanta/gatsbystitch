@@ -63,13 +63,17 @@ const ContentInner = styled.div`
   right: 0;
   top: 0;
 
+  &.product-modal-open {
+    overflow: hidden;
+  }
+
   main {
     margin-bottom: calc(-72px - 1px);
     min-height: 100vh;
     position: relative;
     top: calc(-72px - 1px);
     transition: opacity 0.3s ease-in;
-    will-change: opacity;
+    // will-change: opacity !important;
 
     &.top-0 {
       margin-bottom: 0;
@@ -116,6 +120,26 @@ class Layout extends React.Component {
           },
         }))
       },
+      toggleProductHelpModal: modalName => {
+        if (modalName && !["repair", "shipping", "size"].includes(modalName)) {
+          return
+        }
+
+        this.setState(state => {
+          const newModal = modalName
+            ? state.ui.productHelpModal === modalName
+              ? ""
+              : modalName
+            : ""
+
+          return {
+            ui: {
+              ...state.ui,
+              productHelpModal: newModal || "",
+            },
+          }
+        })
+      },
     },
   }
 
@@ -145,7 +169,11 @@ class Layout extends React.Component {
           className={contentContainerClass}
           onClick={clickHandler}
         >
-          <ContentInner>
+          <ContentInner
+            className={
+              this.state.ui.productHelpModal ? "product-modal-open" : ""
+            }
+          >
             <Aside id={asideID} />
             <Header
               stickyHeaderID={stickyHeaderID}

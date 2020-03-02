@@ -61,7 +61,7 @@ const NavSecondary = styled.nav`
       padding: 0 0 0.3em;
       text-align: left;
       width: 0;
-      will-change: width;
+      // will-change: width !important;
 
       &.show {
         animation: inputShow 0.3s forwards;
