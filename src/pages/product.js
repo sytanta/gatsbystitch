@@ -16,7 +16,7 @@ const ProductPage = () => (
     <Options />
     <Description />
     <Reviews />
-    <Editorial />
+    {/* <Editorial /> */}
     <Recommendation />
   </Layout>
 )

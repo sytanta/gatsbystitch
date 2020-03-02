@@ -11,8 +11,8 @@ import Header from "./header/header"
 import Footer from "./footer"
 
 import checkStickyHeader from "../utils/header"
-import "../css/global.css"
 import { breakpoints } from "../theme"
+import "../css/global.css"
 
 const ContentContainer = styled.div`
   background: #fff;
