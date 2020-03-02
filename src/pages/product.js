@@ -13,11 +13,11 @@ const ProductPage = () => (
   <Layout headerClass="opaque" mainClass="top-0 template-product">
     <SEO title="Product detail" />
     <Images />
-    <Options />
+    {/* <Options />
     <Description />
     <Reviews />
-    {/* <Editorial /> */}
-    <Recommendation />
+    <Editorial />
+    <Recommendation /> */}
   </Layout>
 )
 
