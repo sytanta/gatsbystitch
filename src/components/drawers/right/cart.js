@@ -10,13 +10,14 @@ const Container = styled.div`
   right: 0;
   top: 0;
 
-  .container {
+  .content-container {
     padding-left: 25px;
     padding-right: 25px;
   }
 
   .mini-cart__title {
     font-size: 1.6rem;
+    letter-spacing: 0;
     line-height: 2rem;
     margin-top: 2.5rem;
     text-align: left;
@@ -43,11 +44,11 @@ const Container = styled.div`
 
 const Cart = ({ node: message }) => (
   <Container id="right-drawer-cart" className="mini-cart">
-    <div className="container">
-      <h2 className="mini-cart__title">Your Shopping Cart</h2>
+    <div className="content-container">
+      <h2 className="cd normal-300 mini-cart__title">Your Shopping Cart</h2>
     </div>
     <div className="cart-main-wrapper">
-      <div className="component-cart__container container">
+      <div className="content-container">
         <p id="empty" className="component-cart__empty">
           Your shopping bag is currently empty. If you're looking for somewhere
           to start, explore our collection of closet Essentials. You can't go

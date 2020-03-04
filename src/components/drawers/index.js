@@ -30,6 +30,17 @@ const Container = styled.div`
     -ms-transition: width 0.3s ease;
     -o-transition: width 0.3s ease;
     transition: width 0.3s ease;
+
+    .switcher {
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 5rem;
+      padding: 0 25px;
+    }
+
+    .switchable-section {
+      padding: 0 25px;
+    }
   }
 `
 

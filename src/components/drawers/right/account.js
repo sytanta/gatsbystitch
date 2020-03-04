@@ -218,14 +218,12 @@ const Account = () => {
 
   return (
     <Container id="right-drawer-account">
-      <section className="switcher container">
+      <section className="switcher">
         <div className="switch-toggle">
           <input id="existing_inputsidebar-input" name="toggle" type="radio" />
           <label
-            id="existing-customer-switch"
             htmlFor="existing_inputsidebar-input"
             className="main-switch section-switcher"
-            data-section-to-show="sidebar-non-customer"
             onClick={() => {
               toggleTab("login")
             }}
@@ -234,10 +232,8 @@ const Account = () => {
           </label>
           <input id="new_inputsidebar-input" name="toggle" type="radio" />
           <label
-            id="new-customer-switch"
             htmlFor="new_inputsidebar-input"
             className="main-switch section-switcher"
-            data-section-to-show="sidebar-new-customer"
             onClick={() => {
               toggleTab("register")
             }}

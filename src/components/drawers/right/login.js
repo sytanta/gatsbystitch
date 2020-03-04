@@ -15,7 +15,7 @@ const Container = styled.div`
 const Login = ({ resetPassword }) => (
   <Container
     id="sidebar-non-customer"
-    className="switchable-section container login-container"
+    className="switchable-section login-container"
   >
     <form
       id="customer_login"

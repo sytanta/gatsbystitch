@@ -335,6 +335,82 @@ strong {
   text-align: center;
 }
 
+.text-white {
+  color: #fff !important;
+}
+.text-white :not(input) {
+  color: #fff !important;
+}
+
+.feature-link {
+  text-decoration: none;
+}
+.feature-link a,
+.feature-link span {
+  display: inline-block;
+  position: relative;
+}
+.feature-link a,
+.feature-link u {
+  text-decoration: none;
+}
+.feature-link u::after {
+  background: transparent;
+  content: "";
+  bottom: -5px;
+  display: block;
+  left: 0;
+  height: 2px;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+  width: 0;
+}
+.feature-link a:focus u::after,
+.feature-link a:hover u::after,
+.feature-link a:active u::after,
+.feature-link .dropdown-active u::after {
+  width: 100%;
+}
+
+.figcaption .heading,
+figcaption .heading {
+  display: block;
+}
+
+.large-overlay figcaption {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  left: 0;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.large-overlay .heading {
+  font-family: "CD", Georgia, Times, "Times New Roman", serif;
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 1.2;
+  margin-bottom: 3em;
+  margin-top: 0.5em;
+  text-transform: none;
+}
+.large-overlay .cta {
+  font-family: "ANW", "AN", Avenir, "HelveticaNeue-Light",
+    "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande",
+    sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  padding-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
 .awesome,
 .stamped-button-primary,
 .shopify-challenge__button {

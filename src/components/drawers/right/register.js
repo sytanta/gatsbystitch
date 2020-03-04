@@ -4,13 +4,13 @@ import Img from "gatsby-image"
 import styled from "styled-components"
 
 const Container = styled.div`
-background: transparent;
+  background: transparent;
 `
 
 const Register = ({ node: message }) => (
   <Container
     id="sidebar-new-customer"
-    className="switchable-section container login-container"
+    className="switchable-section login-container"
   >
     <form
       method="post"

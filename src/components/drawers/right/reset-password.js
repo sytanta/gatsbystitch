@@ -9,7 +9,7 @@ const Container = styled.div``
 const ResetPassword = ({ cancel }) => (
   <Container
     id="sidebar-recover-password"
-    className="switchable-section container login-container"
+    className="switchable-section login-container"
   >
     <form
       method="post"
