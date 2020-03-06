@@ -4,6 +4,7 @@ import HeaderDesktop from "./header-desktop"
 import HeaderMobile from "./header-mobile"
 import Logo from "./logo"
 import NavSecondary from "./nav-secondary"
+import MegaMenu from "./mega-menu/menu"
 
 const Header = styled.header`
   background: linear-gradient(rgba(54, 54, 54, 0.1), rgba(54, 54, 54, 0));
@@ -11,18 +12,14 @@ const Header = styled.header`
   position: sticky;
   top: 0;
   width: 100%;
-  // will-change: top !important;
   z-index: 99999;
 
   transition: height ease-in-out 0.3s, color linear 0.1s;
 
-  &.opaque {
+  &.opaque,
+  &.mega-menu-open {
     background: #fff;
     border-bottom: 1px solid #fff;
-
-    ${HeaderDesktop} {
-      padding: 19px 0;
-    }
 
     ${HeaderDesktop} a {
       text-decoration: none;
@@ -58,6 +55,12 @@ const Header = styled.header`
     }
   }
 
+  &.opaque {
+    ${HeaderDesktop} {
+      padding: 19px 0;
+    }
+  }
+
   .logo {
     cursor: pointer;
     position: relative;
@@ -73,6 +76,10 @@ const Header = styled.header`
 
   .feature-link {
     text-decoration: none;
+  }
+
+  &.mega-menu-open ${MegaMenu} {
+    display: flex;
   }
 `
 

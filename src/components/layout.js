@@ -120,6 +120,14 @@ class Layout extends React.Component {
           },
         }))
       },
+      toggleMegaMenu: open => {
+        this.setState(state => ({
+          ui: {
+            ...state.ui,
+            megaMenuOpen: open !== undefined ? !!open : !state.ui.megaMenuOpen,
+          },
+        }))
+      },
       toggleProductHelpModal: modalName => {
         if (modalName && !["repair", "shipping", "size"].includes(modalName)) {
           return
@@ -162,6 +170,17 @@ class Layout extends React.Component {
       ? this.state.ui.toggleDrawerLeft
       : null
 
+    const contentInnerClass = this.state.ui.productHelpModal
+      ? "product-modal-open"
+      : ""
+
+    let headerClass = this.props.headerClass || ""
+    if (this.state.ui.megaMenuOpen) {
+      headerClass += " mega-menu-open"
+    }
+
+    const mainClass = this.props.mainClass || ""
+
     return (
       <UIContext.Provider value={this.state.ui}>
         <Drawers />
@@ -169,19 +188,10 @@ class Layout extends React.Component {
           className={contentContainerClass}
           onClick={clickHandler}
         >
-          <ContentInner
-            className={
-              this.state.ui.productHelpModal ? "product-modal-open" : ""
-            }
-          >
+          <ContentInner className={contentInnerClass}>
             <Aside id={asideID} />
-            <Header
-              stickyHeaderID={stickyHeaderID}
-              className={this.props.headerClass || ""}
-            />
-            <main className={this.props.mainClass || ""}>
-              {this.props.children}
-            </main>
+            <Header stickyHeaderID={stickyHeaderID} className={headerClass} />
+            <main className={mainClass}>{this.props.children}</main>
             <Footer />
           </ContentInner>
         </ContentContainer>
