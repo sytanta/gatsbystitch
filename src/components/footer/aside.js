@@ -117,7 +117,7 @@ const Aside = () => (
       </li>
       <li>
         <a
-          href="https://facebook.com/taylorstitchclothing"
+          href="https://www.linkedin.com/in/tan-sy-688b8a87/"
           target="_blank"
           rel="noopener"
           title="Facebook"
@@ -147,7 +147,7 @@ const Aside = () => (
       </li>
       <li>
         <a
-          href="https://twitter.com/taylorstitch"
+          href="https://www.linkedin.com/in/tan-sy-688b8a87/"
           target="_blank"
           rel="noopener"
           title="Twitter"
@@ -177,7 +177,7 @@ const Aside = () => (
       </li>
       <li>
         <a
-          href="https://pinterest.com/taylorstitch"
+          href="https://www.linkedin.com/in/tan-sy-688b8a87/"
           target="_blank"
           rel="noopener"
           title="Pinterest"
@@ -207,7 +207,7 @@ const Aside = () => (
       </li>
       <li>
         <a
-          href="https://open.spotify.com/user/taylor.stitch/"
+          href="https://www.linkedin.com/in/tan-sy-688b8a87/"
           target="_blank"
           rel="noopener"
           title="Spotify"
@@ -237,7 +237,7 @@ const Aside = () => (
       </li>
       <li>
         <a
-          href="https://taylorstitch.vsco.co/"
+          href="https://www.linkedin.com/in/tan-sy-688b8a87/"
           target="_blank"
           rel="noopener"
           title="vsco grid"
