@@ -92,6 +92,7 @@ const SIZES = {
 // }
 
 const isHeaderMobile = () =>
+  typeof window !== `undefined` &&
   !!window.matchMedia(`(max-width: ${breakpoints.headerMobile}px)`).matches
 
 export { colors, fontFamily, spacing, breakpoints, isHeaderMobile }
