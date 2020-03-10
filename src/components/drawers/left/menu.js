@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 
@@ -108,28 +109,28 @@ const Menu = ({ ui, openMenu }) => {
         <div className="accordion-submenu">
           <ul className="two-column">
             <li>
-              <a href="/collections/mens-shirts">Shirts</a>
+              <Link to="/collections/mens-shirts">Shirts</Link>
             </li>
             <li>
-              <a href="/collections/mens-knits">Knits</a>
+              <Link to="/collections/mens-knits">Knits</Link>
             </li>
             <li>
-              <a href="/collections/mens-bottoms">Bottoms</a>
+              <Link to="/collections/mens-bottoms">Bottoms</Link>
             </li>
             <li>
-              <a href="/collections/mens-denim">Denim</a>
+              <Link to="/collections/mens-denim">Denim</Link>
             </li>
             <li>
-              <a href="/collections/mens-outerwear">Outerwear</a>
+              <Link to="/collections/mens-outerwear">Outerwear</Link>
             </li>
             <li>
-              <a href="/collections/mens-footwear">Footwear</a>
+              <Link to="/collections/mens-footwear">Footwear</Link>
             </li>
             <li>
-              <a href="/collections/the-essentials">Essentials</a>
+              <Link to="/collections/the-essentials">Essentials</Link>
             </li>
             <li>
-              <a href="/collections/mens-accessories">Accessories</a>
+              <Link to="/collections/mens-accessories">Accessories</Link>
             </li>
           </ul>
         </div>
@@ -166,29 +167,29 @@ const Menu = ({ ui, openMenu }) => {
           </h2>
           <ul>
             <li>
-              <a href="/collections/workshop#active-projects-tab">
+              <Link to="/collections/workshop#active-projects-tab">
                 Active Workshop
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/collections/workshop#in-production-tab">
+              <Link to="/collections/workshop#in-production-tab">
                 In Production
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/collections/workshop#faq">FAQ</a>
+              <Link to="/collections/workshop#faq">FAQ</Link>
             </li>
           </ul>
         </div>
       </li>
       <li className={menuItemClassName}>
-        <a href="/collections/mens-last-call">Last Call</a>
+        <Link to="/collections/mens-last-call">Last Call</Link>
       </li>
       <li className={menuItemClassName}>
-        <a href="https://restitch.taylorstitch.com/">Restitch</a>
+        <Link to="">Restitch</Link>
       </li>
       <li className={menuItemClassName}>
-        <a href="/pages/the-commons">The Common Club</a>
+        <Link to="/pages/the-commons">The Common Club</Link>
       </li>
     </Container>
   )

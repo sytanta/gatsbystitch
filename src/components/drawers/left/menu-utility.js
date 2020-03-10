@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 
@@ -20,13 +21,13 @@ const Container = styled.ul`
 const MenuUtility = ({ className }) => (
   <Container className={className}>
     <li>
-      <a href="/blogs/changelog">News Feed</a>
+      <Link to="/blogs/changelog">News Feed</Link>
     </li>
     <li>
-      <a href="/pages/about-us">About</a>
+      <Link to="/pages/about-us">About</Link>
     </li>
     <li>
-      <a href="/help">Help</a>
+      <Link to="">Help</Link>
     </li>
   </Container>
 )

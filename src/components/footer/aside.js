@@ -76,7 +76,7 @@ const Aside = () => (
     <ul className="social">
       <li>
         <a
-          href="https://instagram.com/taylorstitch"
+          href="https://www.linkedin.com/in/tan-sy-688b8a87/"
           target="_blank"
           rel="noopener"
           title="Instagram"
@@ -333,13 +333,13 @@ const Aside = () => (
       <Link to="/pages/privacy-policy" title="">
         Privacy
       </Link>
-      <a href="https://careers.smartrecruiters.com/TaylorStitch" title="">
+      <Link to="" title="">
         Careers
-      </a>
+      </Link>
       <Link to="/blogs/dispatches" title="">
         Blog
       </Link>
-      <Link to="/pages/offers" title="">
+      <Link to="" title="">
         Offers
       </Link>
     </p>

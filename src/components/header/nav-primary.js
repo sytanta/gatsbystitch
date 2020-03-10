@@ -15,8 +15,8 @@ const NavPrimary = () => {
     <Container className="nav-primary" aria-label="Departments and Categories">
       <ul className="top-level">
         <li className="nav-item feature-link first has-dropdown">
-          <a
-            href="/collections/all-mens"
+          <Link
+            to="/collections/all-mens"
             aria-label="All Men's"
             onMouseEnter={() => {
               if (megaMenuOpen) {
@@ -28,29 +28,29 @@ const NavPrimary = () => {
             <span>
               <u>Shop</u>
             </span>
-          </a>
+          </Link>
           <MegaMenu />
         </li>
         <li className="nav-item feature-link">
-          <a href="/collections/workshop" aria-label="">
+          <Link to="/collections/workshop" aria-label="">
             <span>
               <u>Workshop</u>
             </span>
-          </a>
+          </Link>
         </li>
         <li className="nav-item feature-link">
-          <a href="/collections/mens-last-call" aria-label="Last Call">
+          <Link to="/collections/mens-last-call" aria-label="Last Call">
             <span>
               <u>Last Call</u>
             </span>
-          </a>
+          </Link>
         </li>
         <li className="nav-item feature-link">
-          <a href="https://restitch.taylorstitch.com/" aria-label="">
+          <Link to="" aria-label="">
             <span>
               <u>Restitch</u>
             </span>
-          </a>
+          </Link>
         </li>
       </ul>
     </Container>

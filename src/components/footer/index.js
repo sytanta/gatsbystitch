@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import styled from "styled-components"
 
 import Subscribe from "./subscribe"
@@ -151,6 +152,7 @@ const Container = styled.footer`
 
   @media (max-width: ${breakpoints.headerMobile}px) {
     padding-bottom: 26px;
+    padding-top: 35px;
   }
 
   @media (max-width: ${breakpoints.xl}px) {
@@ -198,37 +200,37 @@ const Footer = () => (
       <nav>
         <ul className="main-menu">
           <li className="nav-item first">
-            <a href="/collections/all-mens" title="">
+            <Link to="/collections/all-mens" title="">
               Shop
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a href="/collections/workshop" title="">
+            <Link to="/collections/workshop" title="">
               Workshop
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a href="/collections/mens-last-call" title="">
+            <Link to="/collections/mens-last-call" title="">
               Last Call
-            </a>
+            </Link>
           </li>
           <li className="nav-item last">
-            <a href="https://restitch.taylorstitch.com/" title="">
+            <Link to="" title="">
               Restitch
-            </a>
+            </Link>
           </li>
         </ul>
         <ul className="footer">
           <li className="nav-item first">
-            <a href="/help" title="">
+            <Link to="" title="">
               Help
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
       <ul className="communication-channels">
         <li>
-          <a href="mailto:hello@taylorstitch.com">Email</a>
+          <Link to="mailto:hello@taylorstitch.com">Email</Link>
         </li>
         <li>
           <span>
@@ -239,29 +241,29 @@ const Footer = () => (
       </ul>
       <ul className="small-print">
         <li>
-          <a href="/pages/terms-and-conditions" title="">
+          <Link to="/pages/terms-and-conditions" title="">
             Terms
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/pages/privacy-policy" title="">
+          <Link to="/pages/privacy-policy" title="">
             Privacy
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="https://careers.smartrecruiters.com/TaylorStitch" title="">
+          <Link to="" title="">
             Careers
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/blogs/dispatches" title="">
+          <Link to="/blogs/dispatches" title="">
             Blog
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/pages/offers" title="">
+          <Link to="" title="">
             Offers
-          </a>
+          </Link>
         </li>
       </ul>
       <Aside />

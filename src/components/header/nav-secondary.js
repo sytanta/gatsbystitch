@@ -86,7 +86,7 @@ class NavSecondary extends Component {
           </li>
           <li className="nav-item feature-link">
             <Link
-              to="/help"
+              to=""
               className="nav-support"
               aria-label="Customer Service"
             >

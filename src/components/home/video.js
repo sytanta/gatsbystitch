@@ -36,7 +36,7 @@ const Video = () => (
       ></video>
     </a>
     <figcaption>
-      <a href="/about">
+      <a href="/pages/about-us">
         <span className="pre-heading">Responsibly Built For The Long Haul</span>
         <span className="heading">
           We’re making the world’s best apparel and asking questions about how

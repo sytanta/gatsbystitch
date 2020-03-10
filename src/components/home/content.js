@@ -321,7 +321,7 @@ const Content = () => (
               we source. The way we sew. The way we sell.
             </h2>
             <p className="feature-link">
-              <a href="/about" title="About Us and Our Mission">
+              <a href="/pages/about-us" title="About Us and Our Mission">
                 <u>Learn More</u>
               </a>
             </p>

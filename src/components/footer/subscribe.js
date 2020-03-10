@@ -8,20 +8,20 @@ import { breakpoints } from "../../theme"
 
 const Container = styled.section`
   .logo {
-  //   color: #0f2130;
-  //   cursor: pointer;
+    //   color: #0f2130;
+    //   cursor: pointer;
     // display: block;
-  //   font-size: 16px;
-  //   line-height: 0;
-  //   height: 16px;
-  //   margin-bottom: 3.7rem;
-  //   order: 6;
-  //   padding-bottom: 0;
-  //   position: relative;
-  //   text-transform: uppercase;
-  //   transition: none;
-  //   width: 10rem;
-  //   z-index: 9;
+    //   font-size: 16px;
+    //   line-height: 0;
+    //   height: 16px;
+    //   margin-bottom: 3.7rem;
+    //   order: 6;
+    //   padding-bottom: 0;
+    //   position: relative;
+    //   text-transform: uppercase;
+    //   transition: none;
+    //   width: 10rem;
+    //   z-index: 9;
   }
 
   h2 {
@@ -90,6 +90,12 @@ const Container = styled.section`
     }
   }
 
+  @media (max-width: ${breakpoints.xl}px) {
+    flex-basis: 100% !important;
+    margin-right: 1.33333% !important;
+    padding-right: 1em !important;
+  }
+
   @media (max-width: ${breakpoints.headerMobile}px) {
     .logo {
       display: none !important;
@@ -105,10 +111,9 @@ const Container = styled.section`
     }
   }
 
-  @media (max-width: ${breakpoints.xl}px) {
-    flex-basis: 100% !important;
-    margin-right: 1.33333% !important;
-    padding-right: 1em !important;
+  @media (max-width: ${breakpoints.phablet}px) {
+    margin-right: 0 !important;
+    padding-right: 0 !important;
   }
 `
 
