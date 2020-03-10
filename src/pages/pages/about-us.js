@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
@@ -7,7 +7,8 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import SocialProof from "../../components/pages/about-us-social-proof"
 
-import { breakpoints } from "../../theme"
+import applyOnScrollClass from "../../utils/aos"
+import { breakpoints, isHeaderMobile } from "../../theme"
 
 const Container = styled.div`
   .banner {
@@ -134,6 +135,11 @@ const Container = styled.div`
     :hover {
       color: #363636;
     }
+  }
+
+  .aos-appear {
+    opacity: 1;
+    transform: translate(0, 0);
   }
 
   .feature-link a:hover u::after {
@@ -430,6 +436,15 @@ const AboutPage = ({
     exportsValencia414.nodes[index].childImageSharp.fluid,
   ])
 
+  const aosFadeClass = isHeaderMobile() ? "" : "aos aos-fade"
+  const aosFadeUpClass = isHeaderMobile() ? "" : "aos aos-fade-up"
+
+  useEffect(() => {
+    if (window.matchMedia(`(min-width: ${breakpoints.headerMobile + 1}px)`)) {
+      applyOnScrollClass("aos", "aos-appear")
+    }
+  }, [])
+
   return (
     <Layout>
       <SEO title="About us" />
@@ -456,7 +471,7 @@ const AboutPage = ({
           </div>
         </section>
         <section className="about-intro container">
-          <p>
+          <p className={`${aosFadeClass} aos-delay-100`}>
             Constructed to perfection and responsibly built for the long haul.
             We’ve taken 10 years of feedback and are doubling down on our
             commitment to building the best possible clothing while pledging to
@@ -490,12 +505,7 @@ const AboutPage = ({
           </Link>
           <figcaption>
             <h2>Products That Wear&nbsp;in&nbsp;Not&nbsp;Out</h2>
-            <p
-              data-aos="fade"
-              data-aos-once="true"
-              data-aos-delay="50"
-              className="aos-init"
-            >
+            <p className={`${aosFadeClass} aos-delay-50`}>
               We’ve always considered ourselves a shirting company at our very
               core. Always have. Always will. In fact, when we were just getting
               our vision for Taylor Stitch off the ground ten years ago, we
@@ -504,35 +514,20 @@ const AboutPage = ({
               fit and balance to the importance of French seams to why 22
               stitches-per-inch matters on a shirt.
             </p>
-            <p
-              data-aos="fade"
-              data-aos-once="true"
-              data-aos-delay="50"
-              className="aos-init"
-            >
+            <p className={`${aosFadeClass} aos-delay-50`}>
               You can bet this technical DNA is central to every single product
               we make. Build for the long haul, design products that wear in not
               out, and use the best most sustainable fabrics available—even if
               that means making them yourself.
             </p>
-            <p
-              className="h3 feature-link"
-              data-aos="fade"
-              data-aos-once="true"
-              data-aos-delay="150"
-            >
+            <p className={`h3 feature-link ${aosFadeClass} aos-delay-150`}>
               <Link to="/collections/mens-shirts">
                 <u>Shop Our Signature Shirting</u>
               </Link>
             </p>
           </figcaption>
         </figure>
-        <figure
-          className="about-fabric about-panel"
-          data-aos="fade"
-          data-aos-once="true"
-          data-aos-delay="150"
-        >
+        <figure className={`about-fabric about-panel ${aosFadeClass} aos-delay-150`}>
           <Link to="/collections/mens-shirts">
             <Img
               fluid={sources[1]}
@@ -540,20 +535,8 @@ const AboutPage = ({
             />
           </Link>
           <figcaption>
-            <h3
-              data-aos="fade"
-              data-aos-once="true"
-              data-aos-delay="50"
-              className="aos-init"
-            >
-              Fabrics
-            </h3>
-            <p
-              data-aos="fade"
-              data-aos-once="true"
-              data-aos-delay="50"
-              className="aos-init"
-            >
+            <h3 className={`${aosFadeClass} aos-delay-50`}>Fabrics</h3>
+            <p className={`${aosFadeClass} aos-delay-50`}>
               It’s about protecting our places. No matter where you live, we
               only have one world to care for. We’re committed to using recycled
               and regenerative fibers wherever possible. This will help lower
@@ -562,104 +545,45 @@ const AboutPage = ({
               create a cradle to cradle supply chain. It’s going to take some
               time but we hope everyone joins us.
             </p>
-            <p
-              className="h3 feature-link"
-              data-aos="fade"
-              data-aos-once="true"
-              data-aos-delay="50"
-            >
+            <p className={`h3 feature-link ${aosFadeClass} aos-delay-50`}>
               <Link to="/collections/mens-shirts">
                 <u>Explore Our Fabrics</u>
               </Link>
             </p>
           </figcaption>
         </figure>
-        <figure
-          className="about-factories about-panel aos-init"
-          data-aos="fade"
-          data-aos-once="true"
-          data-aos-delay="150"
-        >
-          <Link
-            to="/blogs/factories"
-            data-featherlight="/blogs/factories #archives"
-            data-featherlight-type="ajax"
-            data-featherlight-variant="modal-ap modal-ap-fp"
-          >
+        <figure className={`about-factories about-panel ${aosFadeClass} aos-delay-150`}>
+          <Link to="/blogs/factories">
             <Img
               fluid={sources[2]}
               alt="We call our factories centers of excellence."
             />
           </Link>
           <figcaption>
-            <h3
-              data-aos="fade"
-              data-aos-once="true"
-              data-aos-delay="50"
-              className="aos-init"
-            >
-              Factories
-            </h3>
-            <p
-              data-aos="fade"
-              data-aos-once="true"
-              data-aos-delay="50"
-              className="aos-init"
-            >
+            <h3 className={`${aosFadeClass} aos-delay-50`}>Factories</h3>
+            <p className={`${aosFadeClass} aos-delay-50`}>
               Responsibly built for the long haul—we can’t do it alone. Our
               construction partners are joining us in our commitment to
               challenge the way the clothing industry operates. From sourcing to
               sewing, they’re the best in the business.
             </p>
-            <p
-              className="h3 feature-link aos-init"
-              data-aos="fade"
-              data-aos-once="true"
-              data-aos-delay="50"
-            >
-              <Link
-                to="/blogs/factories"
-                data-featherlight="/blogs/factories #archives"
-                data-featherlight-type="ajax"
-                data-featherlight-variant="modal-ap modal-ap-fp"
-              >
+            <p className={`h3 feature-link ${aosFadeClass} aos-delay-50`}>
+              <Link to="/blogs/factories">
                 <u>Our Factory Partners</u>
               </Link>
             </p>
           </figcaption>
         </figure>
-        <figure
-          className="about-wf about-panel"
-          data-aos="fade"
-          data-aos-once="true"
-          data-aos-delay="150"
-        >
-          <Link
-            to="/pages/wild-forever"
-            data-featherlight="/pages/wild-forever .secondary-content-wrapper article"
-            data-featherlight-type="ajax"
-            data-featherlight-variant="modal-ap modal-ap-wf"
-          >
+        <figure className={`about-wf about-panel ${aosFadeClass} aos-delay-150`}>
+          <Link to="/pages/wild-forever">
             <Img
               fluid={sources[3]}
               alt="Volunteers working on maintaining our wild."
             />
           </Link>
           <figcaption>
-            <h3
-              data-aos="fade"
-              data-aos-once="true"
-              data-aos-delay="50"
-              className="aos-init"
-            >
-              Wild Forever
-            </h3>
-            <p
-              data-aos="fade"
-              data-aos-once="true"
-              data-aos-delay="50"
-              className="aos-init"
-            >
+            <h3 className={`${aosFadeClass} aos-delay-50`}>Wild Forever</h3>
+            <p className={`${aosFadeClass} aos-delay-50`}>
               A happy blend of education, volunteering, building community and
               having some fun together. We’ll be partnering with other companies
               who share our values, awesome customers, and local organizations
@@ -667,18 +591,8 @@ const AboutPage = ({
               trash, help out on a farm and whatever else our community wants to
               learn about and participate in.
             </p>
-            <p
-              className="h3 feature-link"
-              data-aos="fade"
-              data-aos-once="true"
-              data-aos-delay="50"
-            >
-              <Link
-                to="/pages/wild-forever"
-                data-featherlight="/pages/wild-forever .secondary-content-wrapper article"
-                data-featherlight-type="ajax"
-                data-featherlight-variant="modal-ap modal-ap-wf"
-              >
+            <p className={`h3 feature-link ${aosFadeClass} aos-delay-50`}>
+              <Link to="/pages/wild-forever">
                 <u>Read Our Mission</u>
               </Link>
             </p>
@@ -686,32 +600,14 @@ const AboutPage = ({
         </figure>
         <SocialProof />
         <section className="about-outro container">
-          <p
-            data-aos="fade"
-            data-aos-once="true"
-            data-aos-delay="50"
-            className="aos-init"
-          >
+          <p className={`${aosFadeClass} aos-delay-50`}>
             We’d love to meet you in person the next time you’re in town. Stop
             by and say hello.
           </p>
         </section>
         <section className="about-locations">
-          <figure
-            className="location"
-            data-aos="fade-up"
-            data-aos-once="true"
-            data-aos-delay="800"
-          >
+          <figure className={`location ${aosFadeUpClass} aos-delay-800`}>
             <Link to="/pages/locations-valencia">
-              {/* <img
-                alt="Our Valencia flagship store."
-                className="lazyload "
-                src="//cdn.shopify.com/s/files/1/0070/1922/files/taylorstitch_aboutpage_export_valencia_01_414x.progressive.jpg?v=3268668091684546382"
-                data-src="//cdn.shopify.com/s/files/1/0070/1922/files/taylorstitch_aboutpage_export_valencia_01_600x.progressive.jpg?v=3268668091684546382"
-                data-srcset="//cdn.shopify.com/s/files/1/0070/1922/files/taylorstitch_aboutpage_export_valencia_01_414x.progressive.jpg?v=3268668091684546382 414w,//cdn.shopify.com/s/files/1/0070/1922/files/taylorstitch_aboutpage_export_valencia_01_600x.progressive.jpg?v=3268668091684546382 600w,//cdn.shopify.com/s/files/1/0070/1922/files/taylorstitch_aboutpage_export_valencia_01_900x.progressive.jpg?v=3268668091684546382 900w,//cdn.shopify.com/s/files/1/0070/1922/files/taylorstitch_aboutpage_export_valencia_01_1200x.progressive.jpg?v=3268668091684546382 1200w,//cdn.shopify.com/s/files/1/0070/1922/files/taylorstitch_aboutpage_export_valencia_01_1442x.progressive.jpg?v=3268668091684546382 1442w,//cdn.shopify.com/s/files/1/0070/1922/files/taylorstitch_aboutpage_export_valencia_01.progressive.jpg?v=3268668091684546382 1980w"
-                data-sizes="auto"
-              /> */}
               <Img
                 fluid={sourcesValencia[0]}
                 alt="Our Valencia flagship store."
@@ -736,21 +632,8 @@ const AboutPage = ({
               </address>
             </figcaption>
           </figure>
-          <figure
-            className="location"
-            data-aos="fade-up"
-            data-aos-once="true"
-            data-aos-delay="400"
-          >
+          <figure className={`location ${aosFadeUpClass} aos-delay-400`}>
             <Link to="/pages/locations-chestnut">
-              {/* <img
-                alt="The San Francisco location on Chestnut Street."
-                className="lazyload "
-                src="//cdn.shopify.com/s/files/1/0070/1922/files/taylorstitch_aboutpage_export_chestnut_01_414x.progressive.jpg?v=10553640942570727586"
-                data-src="//cdn.shopify.com/s/files/1/0070/1922/files/taylorstitch_aboutpage_export_chestnut_01_600x.progressive.jpg?v=10553640942570727586"
-                data-srcset="//cdn.shopify.com/s/files/1/0070/1922/files/taylorstitch_aboutpage_export_chestnut_01_414x.progressive.jpg?v=10553640942570727586 414w,//cdn.shopify.com/s/files/1/0070/1922/files/taylorstitch_aboutpage_export_chestnut_01_600x.progressive.jpg?v=10553640942570727586 600w,//cdn.shopify.com/s/files/1/0070/1922/files/taylorstitch_aboutpage_export_chestnut_01_900x.progressive.jpg?v=10553640942570727586 900w,//cdn.shopify.com/s/files/1/0070/1922/files/taylorstitch_aboutpage_export_chestnut_01_1200x.progressive.jpg?v=10553640942570727586 1200w,//cdn.shopify.com/s/files/1/0070/1922/files/taylorstitch_aboutpage_export_chestnut_01_1442x.progressive.jpg?v=10553640942570727586 1442w,//cdn.shopify.com/s/files/1/0070/1922/files/taylorstitch_aboutpage_export_chestnut_01.progressive.jpg?v=10553640942570727586 1980w"
-                data-sizes="auto"
-              /> */}
               <Img
                 fluid={sourcesValencia[1]}
                 alt="The San Francisco location on Chestnut Street."
@@ -775,21 +658,8 @@ const AboutPage = ({
               </address>
             </figcaption>
           </figure>
-          <figure
-            className="location"
-            data-aos="fade-up"
-            data-aos-once="true"
-            data-aos-delay="1200"
-          >
+          <figure className={`location ${aosFadeUpClass} aos-delay-1200`}>
             <Link to="/pages/locations-kamakura">
-              {/* <img
-                alt="Our latest location in Kamakura, Japan."
-                className="lazyload "
-                src="//cdn.shopify.com/s/files/1/0070/1922/files/taylorstitch_aboutpage_export_kamakura_01_414x.progressive.jpg?v=7434741889700166663"
-                data-src="//cdn.shopify.com/s/files/1/0070/1922/files/taylorstitch_aboutpage_export_kamakura_01_600x.progressive.jpg?v=7434741889700166663"
-                data-srcset="//cdn.shopify.com/s/files/1/0070/1922/files/taylorstitch_aboutpage_export_kamakura_01_414x.progressive.jpg?v=7434741889700166663 414w,//cdn.shopify.com/s/files/1/0070/1922/files/taylorstitch_aboutpage_export_kamakura_01_600x.progressive.jpg?v=7434741889700166663 600w,//cdn.shopify.com/s/files/1/0070/1922/files/taylorstitch_aboutpage_export_kamakura_01_900x.progressive.jpg?v=7434741889700166663 900w,//cdn.shopify.com/s/files/1/0070/1922/files/taylorstitch_aboutpage_export_kamakura_01_1200x.progressive.jpg?v=7434741889700166663 1200w,//cdn.shopify.com/s/files/1/0070/1922/files/taylorstitch_aboutpage_export_kamakura_01_1442x.progressive.jpg?v=7434741889700166663 1442w,//cdn.shopify.com/s/files/1/0070/1922/files/taylorstitch_aboutpage_export_kamakura_01.progressive.jpg?v=7434741889700166663 1980w"
-                data-sizes="auto"
-              /> */}
               <Img
                 fluid={sourcesValencia[2]}
                 alt="Our latest location in Kamakura, Japan."

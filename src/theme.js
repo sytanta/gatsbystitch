@@ -36,7 +36,7 @@ const breakpoints = {
   headerMobile: 950,
   desktop: 1000,
   xl: 1200,
-  xxl: 1600
+  xxl: 1600,
 }
 
 const SIZES = {
@@ -91,4 +91,7 @@ const SIZES = {
 //   },
 // }
 
-export { colors, fontFamily, spacing, breakpoints }
+const isHeaderMobile = () =>
+  !!window.matchMedia(`(max-width: ${breakpoints.headerMobile}px)`).matches
+
+export { colors, fontFamily, spacing, breakpoints, isHeaderMobile }

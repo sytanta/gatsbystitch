@@ -496,6 +496,37 @@ figcaption .heading {
   z-index: 9;
 }
 
+/** Animation on scroll **/
+.aos {
+  transition-duration: 2s;
+  transition-property: all;
+}
+.aos-fade {
+  opacity: 0;
+}
+.aos-fade-up {
+  opacity: 0;
+  transform: translate(0, 150px);
+}
+.aos.aos-delay-50 {
+  transition-delay: 50ms;
+}
+.aos.aos-delay-100 {
+  transition-delay: 100ms;
+}
+.aos.aos-delay-150 {
+  transition-delay: 150ms;
+}
+.aos.aos-delay-400 {
+  transition-delay: 400ms;
+}
+.aos.aos-delay-800 {
+  transition-delay: 800ms;
+}
+.aos.aos-delay-1200 {
+  transition-delay: 1200ms;
+}
+
 /** Homepage slider **/
 :root {
   --swiper-navigation-size: auto;
